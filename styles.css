@@ -1,0 +1,172 @@
+/* Tailwind-like utility classes, or base styles */
+.card { @apply bg-white shadow-lg rounded-xl p-6 mb-6; }
+.section-title { @apply text-lg font-semibold mb-2 border-b pb-1; } /* For the form sections */
+.entry-wrapper { @apply space-y-2 border p-4 rounded mb-4 bg-gray-50; }
+
+/* Custom Styles for Resume Preview to EXACTLY match the image */
+#resume-preview {
+    font-family: 'Arial', sans-serif; /* A common sans-serif font like the image */
+    color: #333;
+    padding: 1.5rem; /* Adjust padding if needed to match margins in image */
+    line-height: 1.35;
+    font-size: 0.82rem; /* Overall smaller font size for density */
+}
+
+/* Header Section */
+#resume-preview .header-section {
+    background-color: #f0f4f8; /* Light gray background for header */
+    padding: 0.5rem 0;
+    margin-bottom: 1rem;
+}
+#resume-preview .header-section h2 {
+    font-size: 1.8rem; /* Larger font for name */
+    font-weight: bold;
+    color: #2c5282; /* Dark blue for the name */
+    margin-bottom: 0.2rem;
+    text-transform: uppercase;
+}
+#resume-preview .header-section p.sub-title {
+    font-size: 1rem;
+    color: #4a5568; /* Gray for job title */
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+}
+#resume-preview .contact-info span {
+    display: inline-flex;
+    align-items: center;
+    margin-right: 1rem;
+    font-size: 0.8rem;
+    color: #4a5568;
+}
+#resume-preview .contact-info a {
+    color: #2c5282; /* Blue for links */
+    text-decoration: none;
+    font-weight: 500;
+    margin-left: 0.25rem;
+}
+#resume-preview .contact-info a:hover {
+    text-decoration: underline;
+}
+#resume-preview .contact-info svg {
+    width: 14px; /* Icon size */
+    height: 14px;
+    margin-right: 0.25rem;
+    fill: #4a5568; /* Icon color */
+    vertical-align: middle; /* Align icons nicely */
+}
+
+/* Main Content Grid */
+#resume-preview .main-content-grid {
+    display: grid;
+    grid-template-columns: 2fr 1fr; /* Two columns: 2/3 for left, 1/3 for right */
+    gap: 2rem; /* Space between columns */
+}
+
+/* Resume Section Headers (SUMMARY, EXPERIENCE, EDUCATION, etc.) */
+#resume-preview .resume-section-title {
+    font-size: 1.05rem; /* Section title size */
+    font-weight: bold;
+    color: #333;
+    padding-bottom: 0.2rem;
+    margin-bottom: 0.75rem;
+    border-bottom: 2px solid #a0aec0; /* Lighter gray border */
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+/* Summary Text Styling */
+#resume-preview .summary-text {
+    font-size: 0.85rem;
+    line-height: 1.5;
+    text-align: justify; /* Justify text as in the image */
+    /* Removed fixed height to allow wrapping naturally within the column */
+    /* overflow-y: auto; */ /* Removed as we want natural wrapping, not scroll */
+    margin-bottom: 1rem; /* Space after summary */
+    word-wrap: break-word; /* Ensure long words break */
+}
+
+/* Education & Experience & Projects List Items */
+#resume-preview ul {
+    list-style: none; /* Remove default bullets */
+    padding-left: 0;
+    margin-top: 0;
+    margin-bottom: 1rem; /* Space after each list */
+}
+#resume-preview ul li {
+    margin-bottom: 0.75rem; /* Space between list items */
+    position: relative; /* For float containment */
+    overflow: hidden; /* Clear floats within the list item */
+}
+#resume-preview ul li .float-right {
+    float: right; /* Aligns dates to the right */
+    font-size: 0.8rem;
+    color: #4a5568;
+}
+#resume-preview ul li strong {
+    color: #2d3748; /* Darker text for main titles */
+    font-weight: 600;
+    font-size: 0.85rem;
+}
+#resume-preview ul li span.location-text {
+    color: #666;
+    font-size: 0.8rem;
+}
+
+/* Nested Bullet Points for Responsibilities/Descriptions */
+#resume-preview ul.bullet-list { /* New class for lists that should have bullets */
+    list-style: none;
+    padding-left: 1rem; /* Indent for bullet points */
+    margin-top: 0.25rem;
+    margin-bottom: 0;
+}
+#resume-preview ul.bullet-list li {
+    margin-bottom: 0.2rem; /* Less space between nested bullets */
+    font-size: 0.82rem;
+    color: #4a5568;
+    position: relative; /* For custom bullet positioning */
+    padding-left: 1em; /* Space for the custom bullet */
+}
+#resume-preview ul.bullet-list li::before {
+    content: '•'; /* Custom bullet point character */
+    color: #2d3748; /* Darker color for bullet */
+    position: absolute;
+    left: 0; /* Position the bullet at the start of the padding */
+    top: 0; /* Align with the top of the text */
+}
+
+/* Skills and Coursework Tags */
+#resume-preview .skill-tag, #resume-preview .course-tag {
+    display: inline-block;
+    background-color: #edf2f7; /* Light background for tags */
+    color: #2d3748; /* Dark text for tags */
+    padding: 0.2rem 0.6rem;
+    margin: 0 0.5rem 0.5rem 0; /* Spacing between tags */
+    border-radius: 0.25rem;
+    font-size: 0.78rem;
+    font-weight: 500;
+    line-height: 1.2; /* Adjust line height for tags */
+}
+#resume-preview .skill-category-title {
+    font-weight: bold;
+    color: #2d3748;
+    margin-bottom: 0.25rem;
+    display: block; /* Ensures title is on its own line */
+    font-size: 0.82rem;
+}
+
+#resume-preview .gpa-text {
+    font-size: 0.8rem;
+    color: #2c5282; /* Blue for GPA, as in the image */
+    font-weight: 600;
+    float: right; /* Align GPA to the right */
+    margin-left: 1rem; /* Space from date */
+}
+#resume-preview .project-link {
+    font-size: 0.8rem;
+    color: #2c5282;
+    text-decoration: none;
+    word-break: break-all; /* Break long URLs */
+}
+#resume-preview .project-link:hover {
+    text-decoration: underline;
+}
